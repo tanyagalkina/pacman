@@ -21,7 +21,8 @@ def check_walls_spaces(c1, c2):
 
 def check_inside_the_map(map):
     lent = len(map[0])
-    valid = "01FP\n"
+    #print("the length is", lent)
+    valid = "01FP"
 
     for line in map:
         if len(line) != lent:
@@ -31,6 +32,7 @@ def check_inside_the_map(map):
     count_pacman = 0
 
     for line in map:
+        line = line.replace('\n', '')
         for char in line:
             if char not in valid:
                 print(f"Invalid char in the map", file=sys.stderr)
@@ -41,9 +43,12 @@ def check_inside_the_map(map):
 
             if char == 'P':
                 count_pacman = count_pacman + 1
+            #if char == '\n':
+             #   print ('n!')
     if count_ghost is not 1 or count_pacman is not 1:
         print(f"we thought there can be only one ghost and only one pacman ...", file=sys.stderr)
         sys.exit(84)
+
 
 
 

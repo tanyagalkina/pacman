@@ -17,16 +17,16 @@ def initialize_map(pac_map, nodes, walls):
         x = 0
         for ch in l:
             if ch is 'P':
-                node = [(y, x), -84, False, (-1, -1)]
+                node = [(y, x), -84]
                 nodes.append(node)
             if ch is 'F':
-                node = [(y, x), 0, True, (-1, -1)]
+                node = [(y, x), 0]
                 nodes.append(node)
             if ch is '0':
-                node = [(y, x), float('inf'), False, (-1, -1)]
+                node = [(y, x), float('inf')]
                 nodes.append(node)
             if ch is '1':
-                node = [(y, x), -42, False, (-1, -1)]
+                node = [(y, x), -42]
                 walls.append(node)
             x = x + 1
         y = y + 1
